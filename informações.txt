@@ -1,0 +1,1 @@
+npx prisma migrate dev --name (escrevemos algo para lembra o que mudamos no banco de dados)
