@@ -1,1 +1,2 @@
+ctrl + shift + P => abre o banco de dados (prisma)
 npx prisma migrate dev --name (escrevemos algo para lembra o que mudamos no banco de dados)
