@@ -6,7 +6,7 @@ import { UserDto } from "@domain/dtos/user";
 const prisma = new PrismaClient()
 
 // Para atualizar informações de 1 usuario
-export class UpdateUserCase {
+export class UpdateUsersUseCase {
     constructor (){}
 
     async handle ({ id, name, email, password}: UserDto): Promise<User>{

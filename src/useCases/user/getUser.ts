@@ -4,7 +4,7 @@ import { NotFoundException } from "@domain/exceptions/naoLocalizado";
 const prisma = new PrismaClient()
 
 // Listar apenas 1 usuario
-export class GetUserUseCase {
+export class GetUsersUseCase {
     constructor () {}
 
     async handle(id: string): Promise<User | null> {

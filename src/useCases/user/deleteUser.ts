@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 
 //Para deletar usuario
 
-export class DeleteUserUseCase {
+export class DeleteUsersUseCase {
     constructor () {}
 
     async handle(id: string) {

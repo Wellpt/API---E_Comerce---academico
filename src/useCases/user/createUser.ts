@@ -6,7 +6,7 @@ import { UserDto } from '@domain/dtos/user'
 const prisma = new PrismaClient()
 
 // Para criar usuario no BD
-export class CreateUserUseCase {
+export class CreateUsersUseCase {
     constructor() {}
 
     async handle(user: Omit<UserDto, 'id'>): Promise<User> {

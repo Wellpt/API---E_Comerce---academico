@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { validacaoMiddlleware } from "../middlewares/validacao";
-import { createUser, getUser, listUsers, deleteUser, updateUser} from "../controllers/user";
+import { validacaoMiddlleware } from "@middlewares/validacao";
+import { createUser, getUser, listUsers, deleteUser, updateUser} from "@controllers/user";
 
-import { userValidations, userIdValidation, editUserValidations } from "../validacao/user"
+import { userValidations, userIdValidation, editUserValidations } from "@validacao/user"
 
 const userRoutes = Router()
 

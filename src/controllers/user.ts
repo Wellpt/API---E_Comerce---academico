@@ -1,15 +1,11 @@
 import { Request, Response } from "express";
 
 import { UserDto } from "@domain/dtos/user";
-import { LisUsersUseCase } from "../useCases/user/listUser";
-import { GetUserUseCase } from "../useCases/user/getUser"
-import { CreateUserUseCase } from "../useCases/user/createUser";
-import { UpdateUserCase } from "../useCases/user/updateUser";
-import { DeleteUserUseCase } from "../useCases/user/deleteUser";
+import { ListUsersUseCase, GetUsersUseCase, CreateUsersUseCase, UpdateUsersUseCase, DeleteUsersUseCase } from "@useCases/user";
 
 //Lista usuarios
 export async function listUsers(req: Request, res: Response) {
-    const useCase = new LisUsersUseCase()
+    const useCase = new ListUsersUseCase()
     const users = await useCase.handle()
     return res.json(users)
 }
@@ -17,14 +13,14 @@ export async function listUsers(req: Request, res: Response) {
 //buscar usuario pelo ID
 export async function getUser(req:Request<{ id: string}>, res: Response) {
     const { id } = req.params
-    const useCase = new GetUserUseCase()
+    const useCase = new GetUsersUseCase()
     const user = await useCase.handle(id)
     return res.json(user)
 }
 
 export async function createUser(req:Request<{},{}>, res: Response) {
     const user = req.body;
-    const useCase = new CreateUserUseCase()
+    const useCase = new CreateUsersUseCase()
     const createUser = await useCase.handle(user)
     return res.json (createUser) 
 }
@@ -33,7 +29,7 @@ export async function updateUser(req:Request<{id: string}, {}, Omit<UserDto, 'id
     const { id } = req.params
     const userData = req.body
     
-    const useCase = new UpdateUserCase()
+    const useCase = new UpdateUsersUseCase()
     const updateUser = await useCase.handle({
         id, ...userData
     })
@@ -42,7 +38,7 @@ export async function updateUser(req:Request<{id: string}, {}, Omit<UserDto, 'id
 
 export async function deleteUser(req: Request<{ id: string}>, res: Response) {
     const { id } = req.params
-    const useCase = new DeleteUserUseCase()
+    const useCase = new DeleteUsersUseCase()
     await useCase.handle(id)
 
     return res.json({
