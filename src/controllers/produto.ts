@@ -1,15 +1,14 @@
 import { Request, Response } from "express";
 
 import { ProdutoDto } from "@domain/dtos/produto";
-import { CreateProdutoUserCase, DeletaProdutoUseCase, GetProdutoUseCase, UpdateProductUseCase } from "useCases/produto";
-import { userInfo } from "os";
+import { CreateProdutoUserCase, DeletaProdutoUseCase, GetProdutoUseCase, ListProdutoUseCase, UpdateProductUseCase } from "useCases/produto";
 
 //Lista todos os produtos
 export async function listProdutos(req: Request<{ id: string}>, res: Response) {
     const { id } = req.params
-    const useCase = new GetProdutoUseCase
-    const produto = await useCase.handle(id)
-    return res.json(produto)
+    const useCase = new ListProdutoUseCase
+    const produtos = await useCase.handle()
+    return res.json(produtos)
 }
 
 //Busca produto por ID

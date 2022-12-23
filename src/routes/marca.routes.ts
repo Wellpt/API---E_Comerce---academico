@@ -7,7 +7,7 @@ import { marcaValidations, marcaIdValidation, editMarcaValidations } from "@vali
 const marcaRoutes = Router()
 
 marcaRoutes.get ('/', listMarca)
-marcaRoutes.get ('/', getMarca)
+marcaRoutes.get ('/:id', getMarca)
 marcaRoutes.post ('/', marcaValidations, validacaoMiddlleware, createMarca)
 marcaRoutes.put ('/:id', editMarcaValidations, validacaoMiddlleware, updateMarca)
 marcaRoutes.delete ('/:id', marcaIdValidation, validacaoMiddlleware, deleteMarca)

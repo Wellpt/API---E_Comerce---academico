@@ -2,17 +2,16 @@ import { PrismaClient, Produto } from "@prisma/client";
 
 const prisma = new PrismaClient()
 
-// Para listar todos os produtos cadastrados
-
+// Para listar todos os produtos
 export class ListProdutoUseCase {
     constructor() {}
 
     async handle(): Promise<Produto[]> {
-        const produtos = await prisma.produto.findMany({
+        const listProdutos = await prisma.produto.findMany({
             include: {
                 marca: true
             }
         })
-        return produtos
+        return listProdutos
     }
 }

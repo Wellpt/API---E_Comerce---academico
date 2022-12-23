@@ -7,7 +7,7 @@ import { produtoValidations, produtoIdValidation, editProdutoValidations } from 
 const produtoRoutes = Router()
 
 produtoRoutes.get ('/', listProdutos)
-produtoRoutes.get ('/', getProduto)
+produtoRoutes.get ('/:id', getProduto)
 produtoRoutes.post ('/', produtoValidations, validacaoMiddlleware, createProduto)
 produtoRoutes.put ('/:id', editProdutoValidations, validacaoMiddlleware, updateProduto)
 produtoRoutes.delete ('/:id', produtoIdValidation, validacaoMiddlleware, deleteProduto)

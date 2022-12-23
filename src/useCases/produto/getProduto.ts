@@ -20,7 +20,7 @@ export class GetProdutoUseCase {
             }
         })
         if (!produto) {
-            throw new NotFoundException('Prduto não encontrado')
+            throw new NotFoundException('Produto não encontrado')
         }
         return produto
     }

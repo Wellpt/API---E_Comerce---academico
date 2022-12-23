@@ -2,7 +2,7 @@ import { Marca, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient()
 
-// Para listar todos produtos
+// Para listar todas as marcas
 export class ListMarcaUseCase {
     constructor() {}
 

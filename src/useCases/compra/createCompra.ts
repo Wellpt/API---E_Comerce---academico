@@ -12,11 +12,11 @@ export class CreateCompraUseCase {
 
   async handle(compra: Omit<CompraDto, 'id'>): Promise<Compra> {
 
-    const produtossIds = compra.items.map((x) => x.produtoId);
+    const produtosIds = compra.items.map((x) => x.produtoId);
     const produtos = await prisma.produto.findMany({
       where: {
         id: {
-          in: produtossIds
+          in: produtosIds
         }
       }
     })
