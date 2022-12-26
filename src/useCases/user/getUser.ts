@@ -1,4 +1,4 @@
-import { PrismaClient, User } from "@prisma/client";
+import { PrismaClient, User, } from "@prisma/client";
 import { NotFoundException } from "@domain/exceptions/naoLocalizado";
 
 const prisma = new PrismaClient()
