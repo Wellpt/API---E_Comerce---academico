@@ -7,7 +7,7 @@ import { userValidations, userIdValidation, editUserValidations } from "@validac
 const userRoutes = Router()
 
 userRoutes.get ('/', listUsers)
-userRoutes.get ('/', getUser)
+userRoutes.get ('/:id', getUser)
 userRoutes.post ('/', userValidations, validacaoMiddlleware, createUser)
 userRoutes.put ('/:id', editUserValidations, validacaoMiddlleware, updateUser)
 userRoutes.delete ('/:id', userIdValidation, validacaoMiddlleware, deleteUser)
